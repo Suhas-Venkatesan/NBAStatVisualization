@@ -17,6 +17,6 @@ This is an NBA Visualization web app built with Plot.ly and Dash (a framework th
 * In addition, the app generates player shot charts for any player that played in the NBA starting from the 1995-96 season. After selecting the player and the season, as well as the type of season (regular season, playoffs, pre season, or the all star game), the app generates a shot chart showing all of the player's makes and misses during that year and where on the court they are. Makes are marked by a green dot while misses are marked by a red dot. An example is shown below for Stephen Curry in the latest 2019-20 season which he mostly missed due to injury. 
 ![playbyplayexample](https://github.com/Suhas-Venkatesan/NBAStatVisualization/blob/master/screenshots/nbaappscreenshot3.PNG)
 
-* Some features that could be added in the future are hexbins for shot locations and a small statistics bar to the left of the chart that shows some relevant stats (without making it look too complicated)
+* Some features that could be added in the future are supplementary charts with hexbins for shot locations and a small statistics bar to the left of the chart that shows some relevant stats (without making it look too complicated)
 
 
