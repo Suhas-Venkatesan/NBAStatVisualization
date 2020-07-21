@@ -74,6 +74,8 @@ game_graph = dcc.Graph(
 )
 
 
+
+
 def GameVisualizer_App():
     layout = html.Div([
         nav,
@@ -99,13 +101,20 @@ def build_graph(game_id):
     pbp = pbp.get_data_frames()[0]
     pbp = pbp.loc[(pbp['EVENTMSGTYPE'] == 1) | (pbp['EVENTMSGTYPE'] == 3)]
 
-    secs = pbp['PCTIMESTRING'].str.split(":").str[0].astype(int).rsub(12).mul(60)
-    secs = secs.sub(pbp['PCTIMESTRING'].str.split(":").str[1].astype(int))
-    secs = secs.add(pbp['PERIOD'].sub(1).mul(720))
     ##
-    XAXIS = secs.floordiv(60).astype(str)
+
+    pbp['secs'] = pbp['PCTIMESTRING'].str.split(":").str[0].astype(int).rsub(12).mul(60).sub(pbp['PCTIMESTRING'].str.split(":").str[1].astype(int)).add(pbp['PERIOD'].sub(1).mul(720))
+
+    ##
+    pbp.loc[(pbp['PERIOD'] > 4), 'secs'] = pbp['PCTIMESTRING'].str.split(":").str[0].astype(int).rsub(5).mul(60).sub(
+        pbp['PCTIMESTRING'].str.split(":").str[1].astype(int)).add(2880).add(pbp['PERIOD'].sub(5).mul(300))
+
+    XAXIS = pbp['secs'].floordiv(60).astype(str)
     XAXIS = XAXIS.add(":")
-    XAXIS = XAXIS.add(secs.mod(60).astype(str))
+    XAXIS = XAXIS.add(pbp['secs'].mod(60).astype(str))
+
+    ##
+
     XAXIS = pd.to_datetime(XAXIS, format="%M:%S")
     pbp['XAXIS'] = XAXIS
     pbp['SCOREMARGIN'].replace({"TIE": "0"}, inplace=True)
@@ -148,7 +157,39 @@ def build_graph(game_id):
             color="#000000"
         ),
         height=750,
-        dragmode=False
+        dragmode=False,
+        annotations=[
+            dict(
+                x=1.03,
+                y=.9,
+                xref='paper',
+                yref='paper',
+                text="Home",
+                bordercolor='#000000',
+                showarrow=False,
+                font=dict(
+                    family="Rockwell",
+                    size=15,
+                    color="#000000"
+                ),
+                borderwidth=5,
+            ),
+            dict(
+                x=1.03,
+                y=.1,
+                xref='paper',
+                yref='paper',
+                text="Away",
+                bordercolor='#000000',
+                showarrow=False,
+                font=dict(
+                    family="Rockwell",
+                    size=15,
+                    color="#000000"
+                ),
+                borderwidth=5,
+            )
+        ]
     )
 
     fig.add_shape(

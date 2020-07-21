@@ -12,6 +12,9 @@ body = dbc.Container(
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
+        dbc.Row(html.Br()),
+        dbc.Row(html.Br()),
+        dbc.Row(html.Br()),
         dbc.Row(
             [
                 html.H1("NBA Statistics Tracker")
@@ -25,12 +28,6 @@ body = dbc.Container(
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
-        dbc.Row(html.H6("Player Visualization: Select any current or past NBA player along with a season"
-                        "and a season type in order to see a simple shot chart with made and missed shots. Available "
-                        "seasons "
-                        "start from 1995. Game Visualization: Select any game from 1995 and onwards by specifying the two teams that played as well as the "'season '
-                        'in order to see a play by play chart showing change in score margin during the game. '
-                        ''), justify='center'),
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
@@ -38,10 +35,7 @@ body = dbc.Container(
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
         dbc.Row(html.Br()),
-        dbc.Row(html.Br()),
-        dbc.Row(html.Br()),
-        dbc.Row(html.Br()),
-        dbc.Row(html.P("Suhas Venkatesan ©2020 using Dash and Plot.ly"), justify='center', className='footer'),
+        dbc.Row(html.P("Suhas Venkatesan ©2020 using Dash and Plot.ly, data from stats.nba.com"), justify='center', className='footer'),
 
     ], style={"height": "100vh"}, fluid=True
 

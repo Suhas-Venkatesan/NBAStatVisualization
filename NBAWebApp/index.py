@@ -22,7 +22,7 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/games':
         return GameVisualizer_App()
-    elif pathname == '/about':
+    elif pathname == '/home':
         return homepage()
     # change later after players page is done
     elif pathname == '/players':
