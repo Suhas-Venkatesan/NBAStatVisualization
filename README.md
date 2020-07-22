@@ -20,3 +20,6 @@ This is an NBA Visualization web app built with Plot.ly and Dash (a framework th
 * Some features that could be added in the future are supplementary charts with hexbins for shot locations and a small statistics bar to the left of the chart that shows some relevant stats (without making it look too complicated)
 
 
+# Data
+All data was retrieved from stats.nba.com using endpoints from the nba-api
+
