@@ -1,5 +1,5 @@
 # Background and Overview
-This is an NBA Visualization web app built with Plot.ly and Dash (a framework that uses React.js and Flask), to view complicated NBA statistics in a simple fashion with graphs and charts. You can check out the app at ____________. 
+This is an NBA Visualization web app built with Plot.ly and Dash (a framework that uses React.js and Flask), to view complicated NBA statistics in a simple fashion with graphs and charts.  
 
 # Play by Play Visualization
 * As a huge fan of the NBA as well as data science, I wanted to create an easy to use tool that would allow a user to look up any game from the 1995-96 season and onwards(games before then do not have play by play data on the website). The user can see a play-by-play graph which illustrates the changes in score throughout the game, which are graphed on the y-axis as the score margin. There is a similar tool to this one already available, but its game selecting interface runs on date instead of by team and season, making it extremely inconvenient. In addition, it only contains games from the 2017-18 NBA season and onwards while my tool contains almost every game starting from the 1995-96 season. The progression of the game is detailed by the graph, and the user can quickly see which team was ahead at what point in the game, how frequently the leads were changed, and how close (or lopsided) the game actually was in its entirety. There is also hover enabled so each made shot and made free throw throughout the game can clearly be visible.
@@ -21,5 +21,5 @@ This is an NBA Visualization web app built with Plot.ly and Dash (a framework th
 
 
 # Data
-All data was retrieved from stats.nba.com using endpoints from the nba-api
+All data was retrieved from stats.nba.com using endpoints from the nba-api. However, stats.nba.com blocks IP addresses from almost all known server providers, so server side calling of the endpoints is not possible at this point.
 
